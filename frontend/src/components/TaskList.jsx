@@ -252,7 +252,7 @@ export function TaskList({ tasks, onEditTask, onDeleteTask }) {
                               : "border-slate-300 hover:border-green-400"
                           }`}
                         >
-                          {isCompleted && <Check className="h-3 w-3 m-auto" />}
+                          {isCompleted && <Check className="h-5 w-5 m-auto" />}
                         </button>
 
                         {isEditing ? (
@@ -275,7 +275,7 @@ export function TaskList({ tasks, onEditTask, onDeleteTask }) {
                             </span>
                             {overdue && !isCompleted && (
                               <div className="flex items-center gap-1 mt-1">
-                                <AlertCircle className="h-3 w-3 text-red-500" />
+                                <AlertCircle className="h-5 w-5 text-red-500" />
                                 <span className="text-xs text-red-600 font-medium">
                                   Overdue
                                 </span>
@@ -421,40 +421,27 @@ export function TaskList({ tasks, onEditTask, onDeleteTask }) {
                       <div className="flex items-center gap-1">
                         {isEditing ? (
                           <>
-                            <Button
+                            <Check
                               onClick={() => handleSave(task.id)}
-                              size="sm"
-                              className="h-8 w-8 p-0 bg-green-600 hover:bg-green-700"
-                            >
-                              <Check className="h-4 w-4" />
-                            </Button>
-                            <Button
+                              className="h-5 w-5 cursor-pointer"
+                            />
+
+                            <X
+                              className="h-5 w-5 cursor-pointer"
                               onClick={handleCancel}
-                              size="sm"
-                              variant="outline"
-                              className="h-8 w-8 p-0"
-                            >
-                              <X className="h-4 w-4" />
-                            </Button>
+                            />
                           </>
                         ) : (
                           <>
-                            <Button
+                            <Pencil
                               onClick={() => handleEdit(task)}
-                              size="sm"
-                              variant="ghost"
-                              className="h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                            >
-                              <Pencil className="h-4 w-4" />
-                            </Button>
-                            <Button
+                              className="h-5 w-5 cursor-pointer"
+                            />
+
+                            <Trash2
                               onClick={() => onDeleteTask(task.id)}
-                              size="sm"
-                              variant="ghost"
-                              className="h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity text-red-600 hover:text-red-700 hover:bg-red-50"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </Button>
+                              className="h-5 w-5 cursor-pointer"
+                            />
                           </>
                         )}
                       </div>

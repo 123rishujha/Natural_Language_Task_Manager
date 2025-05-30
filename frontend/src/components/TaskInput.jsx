@@ -49,35 +49,7 @@ export function TaskInput({ onAddTask }) {
   const handleAddTask = async () => {
     if (!taskText.trim()) return;
 
-    setIsLoading(true);
-    setError(null);
-    setSuccess(false);
-
-    try {
-      // Simulate API call for demo
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      // Mock response - in real app this would be your API call
-      const mockTasks = [
-        {
-          id: Date.now(),
-          name: taskText.substring(0, 50) + (taskText.length > 50 ? "..." : ""),
-          assignee: "Auto-assigned",
-          dueDate: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
-          priority: "P2",
-        },
-      ];
-
-      mockTasks.forEach((task) => onAddTask && onAddTask(task));
-
-      setTaskText("");
-      setSuccess(true);
-      setTimeout(() => setSuccess(false), 3000);
-    } catch (err) {
-      setError(err.message || "Failed to process task");
-    } finally {
-      setIsLoading(false);
-    }
+    onAddTask(taskText);
   };
 
   const handleSuggestionClick = (suggestion) => {
