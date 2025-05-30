@@ -1,4 +1,4 @@
-# Natural Language Task Manager
+![screencapture-localhost-5173-2025-05-29-23_46_36](https://github.com/user-attachments/assets/cb7a754b-8270-4377-8f4b-4ec39f3dee4c)# Natural Language Task Manager
 
 ## Overview
 
@@ -77,3 +77,8 @@ The frontend will run by default on [http://localhost:5173](http://localhost:517
 - Ensure both backend and frontend servers are running.
 - Check `.env` for correct OpenAI API key.
 - Review browser and server console for errors.
+
+## Output
+
+
+![screencapture-localhost-5173-2025-05-29-23_46_36](https://github.com/user-attachments/assets/adf3043a-f35e-4fa1-a340-7b2a63c8b5af)
